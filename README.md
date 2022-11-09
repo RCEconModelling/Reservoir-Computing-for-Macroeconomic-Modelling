@@ -14,17 +14,20 @@ Wherever possible, raw data is also included in the `data` folder. For details r
 
 ## Reference
 
-Paper: [Arxiv (Soon)](https://arxiv.org/abs/???)
+Paper: [ArXiv](https://arxiv.org/abs/2211.00363), [ResearchGate](https://www.researchgate.net/publication/364957371_Reservoir_Computing_for_Macroeconomic_Forecasting_with_Mixed_Frequency_Data)
+
+![Paper Cover](/paper_cover.png)
 
 Citation:
 
 ```bibtex
-@misc{,
-    title={},
-    author={},
-    year={},
-    eprint={},
-    archivePrefix={arXiv},
-    primaryClass={}
+@misc{https://doi.org/10.48550/arxiv.2211.00363,
+  doi = {10.48550/ARXIV.2211.00363},
+  url = {https://arxiv.org/abs/2211.00363},
+  author = {Ballarin, Giovanni and Dellaportas, Petros and Grigoryeva, Lyudmila and Hirt, Marcel and van Huellen, Sophie and Ortega, Juan-Pablo},
+  title = {Reservoir Computing for Macroeconomic Forecasting with Mixed Frequency Data},
+  publisher = {arXiv},
+  year = {2022}
 }
+
 ```
