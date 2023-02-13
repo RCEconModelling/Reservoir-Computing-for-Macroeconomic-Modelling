@@ -1,0 +1,72 @@
+# Data Sources
+
+The data used in this project has been obtained from two data sources:
+
+* FRED-MD and FRED-QD: Monthly and Quarterly Databases for Macroeconomic Research.
+* Refinitiv Datastream - Economic data
+
+Access to Refinitiv Datastream is subject to a licence and cannot be shared. Data obtained from FRED-MD and FRED-QD are available. Please see \url{https://research.stlouisfed.org/econ/mccracken/fred-databases/} for licence restrictions.
+
+Please see below for a list of data series and thier sources:
+
+START DATE: 31/01/1959
+
+TRANSFORMATIONS
+1: none
+2: D
+3: DD
+4: Log
+5: Dlog
+6: DDlog
+7: Pct change
+8: GARCH
+
+
+QUARTER
+Source: FRED - QD
+
+QY* - 5 - GDPC1 - Real Gross Domestic Product, 3 Decimal (Billions of Chained 2012 Dollars)
+
+
+MONTH
+Source: FRED - MD
+
+M1* - 5 - INDPRO 		- IP Index
+M2  - 2 - CUMFNS 		- Capacity Utilization: Manufacturing
+M3  - 2 - UNRATE 		- Civilian Unemployment Rate
+M4* - 5 - PAYEMS 		- All Employees: Total nonfarm
+M5* - 4 - HOUST  		- Housing Starts: Total New Privately Owned
+M6  - 5 - DPCERA3M086SBEA 	- Real personal consumption expenditures
+M7* - 5 - RETAILx	  	- Retail and Food Services Sales
+M8  - 5 - AMDMNOx 		- New Orders for Durable Goods 		
+M9  - 2 - UMCSENTx		- Consumer Sentiment Index 
+M10 - 6 - PPIFGS 		- PPI: Finished Goods (in file under WPSFD49207)
+M11*- 5 - TWEXMMTH		- Nominal effective exchange rate US
+M12*- 2 - FEDFUNDS   		- Effective Federal Funds Rate
+M13 - 1 - AAAFFM     		- Moody’s Aaa Corporate Bond Minus FEDFUNDS
+M14*- 1 - BAAFFM     		- Moody’s Baa Corporate Bond Minus FEDFUNDS
+M15*- 1 - COMPAPFFx  		- 3-Month Commercial Paper Minus FEDFUNDS
+M16 - 1 - TB3SMFFM   		- 3-Month Treasury C Minus FEDFUNDS
+M17 - 1 - T10YFFM    		- 10-Year Treasury C Minus FEDFUNDS
+M18 - 2 - GS1        		- 1-Year Treasury Rate
+M19 - 2 - GS10       		- 10-Year Treasury Rate
+M20 - 1 - GS10-TB3MS 		- 10-Year Treasury Rate - 3-Month Treasury Bill
+
+
+DAY
+Source: Datastream
+
+D1  - 8 - S&PComp		- S&P500 index (vola)
+D2  - 1 - ISPCS00-S&PComp	- S&P500 index (yield curve)
+D3* - 8 - DJINDUS		- DJ Industrial share price (vola)	
+D5  - 8 - GSCITOT		- Spot commodity price index (vola)
+D6  - 8 - CRUDOIL		- Spot price oil (vola) 
+D7  - 8 - GOLDHAR		- Spot price gold (vola)
+D8  - 8 - WHEATSF		- Spot price wheat (vola)
+D9  - 8 - COCOAIC/COCINUS	- Spot price cocoa (vola)
+D10 - 1 - NCLC.03-NCLC.01	- Futures price oil term structure
+D11 - 1 - NGCC.03-NGCC.01	- Futures price gold term structure
+D12 - 1 - CWFC.03-CWFC.01	- Futures price wheat term structure
+D13 - 1 - NCCC.03-NCCC.01	- Futures price cocoa term structure
+
+
