@@ -5,7 +5,9 @@ The data used in this project has been obtained from two data sources:
 * FRED-MD and FRED-QD: Monthly and Quarterly Databases for Macroeconomic Research.
 * Refinitiv Datastream - Economic data
 
-Access to Refinitiv Datastream is subject to a licence and cannot be shared. Data obtained from FRED-MD and FRED-QD are available. Please see \url{https://research.stlouisfed.org/econ/mccracken/fred-databases/} for licence restrictions.
+Access to Refinitiv Datastream is subject to a licence and cannot be shared. 
+Data obtained from FRED-MD and FRED-QD are available. 
+Please see https://research.stlouisfed.org/econ/mccracken/fred-databases/ for licence restrictions.
 
 Please see below for a list of data series and thier sources:
 
@@ -68,5 +70,3 @@ D10 - 1 - NCLC.03-NCLC.01	- Futures price oil term structure
 D11 - 1 - NGCC.03-NGCC.01	- Futures price gold term structure
 D12 - 1 - CWFC.03-CWFC.01	- Futures price wheat term structure
 D13 - 1 - NCCC.03-NCCC.01	- Futures price cocoa term structure
-
-
