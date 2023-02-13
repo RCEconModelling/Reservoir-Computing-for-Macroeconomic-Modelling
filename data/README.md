@@ -6,6 +6,7 @@ The data used in this project has been obtained from two data sources:
 * Refinitiv Datastream - Economic data
 
 Access to Refinitiv Datastream is subject to a licence and cannot be shared. 
+
 Data obtained from FRED-MD and FRED-QD are available. 
 Please see https://research.stlouisfed.org/econ/mccracken/fred-databases/ for licence restrictions.
 
