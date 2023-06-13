@@ -22,6 +22,6 @@ for (c in colnames(RelMSFE_small)) {
   results_table_DF[paste(c, "MCS")] = MCS_small[c]
 }
 
-print(xtable(results_table_DF, digits=3))
+print(xtable(results_table_DF, digits=3), include.rownames=FALSE)
 
 # -----

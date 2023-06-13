@@ -11,7 +11,7 @@ import pandas as pd
 import numpy as np
 import scipy.optimize as optim
 import matplotlib.pyplot as plt
-from pymoo.algorithms.soo.nonconvex.pattern_search import PatternSearch
+from pymoo.algorithms.soo.nonconvex.pattern import PatternSearch
 from pymoo.problems.functional import FunctionalProblem
 from pymoo.optimize import minimize
 

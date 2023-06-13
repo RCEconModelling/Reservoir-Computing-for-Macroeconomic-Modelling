@@ -27,6 +27,6 @@ Citation:
   author = {Ballarin, Giovanni and Dellaportas, Petros and Grigoryeva, Lyudmila and Hirt, Marcel and van Huellen, Sophie and Ortega, Juan-Pablo},
   title = {Reservoir Computing for Macroeconomic Forecasting with Mixed Frequency Data},
   publisher = {arXiv},
-  year = {2022}
+  year = {2023}
 }
 ```

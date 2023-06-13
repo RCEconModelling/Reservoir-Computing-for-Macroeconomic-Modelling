@@ -1,6 +1,7 @@
 #
 # Weave LaTeX table of results (Relative RMSFE + Multi-horizon MCS) for SMALL dataset
-# 
+#
+# NOTE: run in R version 4.2.3 (2023-03-15 ucrt)
 
 library(tidyverse)
 library(stringr)
@@ -50,6 +51,6 @@ results_table_DF = RelRMSFE_MH_small_mod %>%
     Setup, Model, `1`:`8`, uMCS
   )
 
-print(xtable(results_table_DF, digits=3))
+print(xtable(results_table_DF, digits=3), include.rownames=FALSE)
   
 # -----

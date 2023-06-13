@@ -3,11 +3,17 @@
 #
 # Ref: "Multi-Horizon Forecast Comparison" (2021), Quaedvlieg, Rogier
 # 
+# NOTE: run in R version 4.2.3 (2023-03-15 ucrt)
+
+rm(list=ls()) # clear workspace
 
 library(tidyverse)
 library(lubridate)
-library(MultiHorizonSPA)
+library(tictoc)
 library(xtable)
+#library(MultiHorizonSPA) # see: https://github.com/lucabarbaglia/MultiHorizonSPA
+
+source("./R/lib_uMCS.R") # load uMCS functions
 
 # Set working directory
 setwd("~/GitHub/Reservoir-Computing-for-Macroeconomic-Modelling")
@@ -70,52 +76,76 @@ MHMCS_results = list()
 
 i = 1
 for (f in losses_filenames) {
+  cat(paste0("+ File: ",  f, "\n"))
+  
   # Get losses
   loss_list = get_model_losses(paste0(f, ".csv"), losses_max_horizon)
   M0_names = names(loss_list)
   
   # alpha = 0.1
-  MHMCS_010 = FastMultiHorizonMCS(
-    loss_list, 
-    alpha_mcs = 0.1,
-    L = 3, 
-    B = 1000, 
-    unif_or_average = 'u', 
-    num_cores = 4,
-    seed = 202209
-  )
+  # MHMCS_010 = FastMultiHorizonMCS(
+  #   loss_list, 
+  #   alpha_t = 0.1,
+  #   alpha_mcs = 0.1,
+  #   L = 3, 
+  #   B = 1000, 
+  #   unif_or_average = 'u', 
+  #   num_cores = 4,
+  #   seed = 202305
+  # )
   
-  p_values_table_010 = data.frame(
-    p_value = MHMCS_010$p_values,
-    row.names = M0_names
-  ) %>% arrange(p_value)
+  # p_values_table_010 = data.frame(
+  #   p_value = MHMCS_010$p_values,
+  #   row.names = M0_names
+  # ) %>% arrange(p_value)
   
   # alpha = 0.25
-  MHMCS_025 = FastMultiHorizonMCS(
-    loss_list, 
-    alpha_mcs = 0.25,
-    L = 3, 
-    B = 1000, 
-    unif_or_average = 'u', 
-    num_cores = 4,
-    seed = 202209
-  )
+  # MHMCS_025 = FastMultiHorizonMCS(
+  #   loss_list, 
+  #   alpha_t = 0.1,
+  #   alpha_mcs = 0.25,
+  #   L = 3, 
+  #   B = 1000, 
+  #   unif_or_average = 'u', 
+  #   num_cores = 4,
+  #   seed = 202305
+  # )
   
-  p_values_table_025 = data.frame(
-    p_value = MHMCS_025$p_values,
-    row.names = M0_names
-  ) %>% arrange(p_value)
+  # p_values_table_025 = data.frame(
+  #   p_value = MHMCS_025$p_values,
+  #   row.names = M0_names
+  # ) %>% arrange(p_value)
+  
+  tic()
+  MHMCS = uMCS(
+    loss_list, 
+    alpha_ij=0.1, 
+    B=1000, 
+    l=2, 
+    seed=12345, 
+    sorted=FALSE
+  )
+  toc()
+  
+  p_values_table = data.frame(
+      p_value = MHMCS$MCS_p_values,
+      row.names = M0_names
+    ) %>% 
+    arrange(p_value) 
+  
+  p_values_table_010 = p_values_table %>% filter(p_value > 0.1)
+  p_values_table_025 = p_values_table %>% filter(p_value > 0.25)
   
   # Save results 
   mhmcs_results_i = list(
     M0_names,
     list(
       p_values_table_010,
-      M0_names[MHMCS_010$MCS_set]
+      rownames(p_values_table_010)
     ),
     list(
       p_values_table_025,
-      M0_names[MHMCS_025$MCS_set]
+      rownames(p_values_table_025)
     )
   )
   names(mhmcs_results_i) = c("models_names", "alpha=0_10", "alpha=0_25")
@@ -123,8 +153,8 @@ for (f in losses_filenames) {
   
   i = i + 1
   
-  rm(loss_list, M0_names) 
-  rm(MHMCS_010, MHMCS_025, p_values_table_010, p_values_table_025)
+  rm(loss_list, M0_names, MHMCS) 
+  rm(p_values_table, p_values_table_010, p_values_table_025)
   rm(mhmcs_results_i)
 }
 names(MHMCS_results) = losses_filenames
@@ -176,7 +206,8 @@ for (r in names(MHMCS_results)) {
   i = i + 1
 }
 
-xtable(results_DF)
+# xtable(results_DF)
+# print(xtable(results_DF, digits=3), include.rownames=FALSE)
 
 # Export results
 write.csv(results_DF, paste0(getwd(), "/R/", "MHMCS_small_stars.csv"), row.names = FALSE)

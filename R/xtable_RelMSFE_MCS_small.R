@@ -1,6 +1,7 @@
 #
 # Weave LaTeX table of results (Relative MSFE + MCS) for SMALL dataset
 # 
+# NOTE: run in R version 4.2.3 (2023-03-15 ucrt)
 
 library(tidyverse)
 library(xtable)
@@ -22,6 +23,6 @@ for (c in colnames(RelMSFE_small)) {
   results_table_DF[paste(c, "MCS")] = MCS_small[c]
 }
 
-print(xtable(results_table_DF, digits=3))
+print(xtable(results_table_DF, digits=3), include.rownames=FALSE)
 
 # -----

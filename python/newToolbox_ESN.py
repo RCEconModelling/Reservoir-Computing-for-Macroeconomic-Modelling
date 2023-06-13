@@ -20,7 +20,7 @@ from scipy.stats import multivariate_normal
 from scipy.linalg import block_diag
 from scipy.special import kl_div
 from sklearn.model_selection import TimeSeriesSplit
-from pymoo.algorithms.soo.nonconvex.pattern_search import PatternSearch
+from pymoo.algorithms.soo.nonconvex.pattern import PatternSearch
 from pymoo.problems.functional import FunctionalProblem
 from pymoo.optimize import minimize
 from pymoo.factory import get_termination

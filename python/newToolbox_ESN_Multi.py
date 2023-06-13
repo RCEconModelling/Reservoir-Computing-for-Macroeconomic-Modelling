@@ -20,10 +20,10 @@ from scipy.optimize import shgo, dual_annealing, basinhopping
 from scipy.special import kl_div
 from sklearn.model_selection import TimeSeriesSplit
 from sklearn.decomposition import PCA
-from pymoo.algorithms.soo.nonconvex.pattern_search import PatternSearch
+from pymoo.algorithms.soo.nonconvex.pattern import PatternSearch
 from pymoo.algorithms.soo.nonconvex.pso import PSO
 from pymoo.algorithms.moo.nsga2 import NSGA2
-from pymoo.algorithms.soo.nonconvex.nelder_mead import NelderMead
+from pymoo.algorithms.soo.nonconvex.nelder import NelderMead
 from pymoo.problems.functional import FunctionalProblem
 from pymoo.optimize import minimize as pymoo_minimize
 from pymoo.factory import get_termination

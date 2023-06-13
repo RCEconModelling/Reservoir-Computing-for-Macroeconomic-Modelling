@@ -3,11 +3,12 @@
 #
 # Ref: "The Model Confidence Set" (2011), Hansen et al.
 # 
+# NOTE: run in R version 4.2.3 (2023-03-15 ucrt)
 
 library(tidyverse)
 library(lubridate)
 #library(MCS)
-library(modelconf)
+library(modelconf) # see: https://github.com/nielsaka/modelconf/
 library(xtable)
 
 # Set working directory

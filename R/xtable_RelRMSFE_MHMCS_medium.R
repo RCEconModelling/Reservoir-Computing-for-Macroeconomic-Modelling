@@ -50,6 +50,6 @@ results_table_DF = RelRMSFE_MH_medium_mod %>%
     Setup, Model, `1`:`8`, uMCS
   )
 
-print(xtable(results_table_DF, digits=3))
+print(xtable(results_table_DF, digits=3), include.rownames=FALSE)
 
 # -----
