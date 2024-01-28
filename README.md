@@ -14,19 +14,22 @@ Wherever possible, raw data is also included in the `data` folder. For details r
 
 ## Reference
 
-Paper: [ArXiv](https://arxiv.org/abs/2211.00363), [ResearchGate](https://www.researchgate.net/publication/364957371_Reservoir_Computing_for_Macroeconomic_Forecasting_with_Mixed_Frequency_Data)
+Published version (Open Access): [DOI](https://doi.org/10.1016/j.ijforecast.2023.10.009)
 
-![Paper Cover](/paper_cover.png)
+Working paper versions: [ArXiv](https://arxiv.org/abs/2211.00363), [ResearchGate](https://www.researchgate.net/publication/364957371_Reservoir_Computing_for_Macroeconomic_Forecasting_with_Mixed_Frequency_Data)
+
+![Published Paper Cover](pub_cover.jpg)
 
 Citation:
 
 ```bibtex
-@misc{https://doi.org/10.48550/arxiv.2211.00363,
-  doi = {10.48550/ARXIV.2211.00363},
-  url = {https://arxiv.org/abs/2211.00363},
-  author = {Ballarin, Giovanni and Dellaportas, Petros and Grigoryeva, Lyudmila and Hirt, Marcel and van Huellen, Sophie and Ortega, Juan-Pablo},
-  title = {Reservoir Computing for Macroeconomic Forecasting with Mixed Frequency Data},
-  publisher = {arXiv},
-  year = {2023}
+@article{BALLARIN2023,
+  title = {Reservoir computing for macroeconomic forecasting with mixed-frequency data},
+  journal = {International Journal of Forecasting},
+  year = {2023},
+  issn = {0169-2070},
+  doi = {https://doi.org/10.1016/j.ijforecast.2023.10.009},
+  url = {https://www.sciencedirect.com/science/article/pii/S0169207023001085},
+  author = {Giovanni Ballarin and Petros Dellaportas and Lyudmila Grigoryeva and Marcel Hirt and Sophie {van Huellen} and Juan-Pablo Ortega},
 }
 ```
